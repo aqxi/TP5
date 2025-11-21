@@ -1,0 +1,39 @@
+{
+  "initial_distribution": {
+    "/feed": 1.0
+  },
+  "transition_matrix": {
+    "/feed": {
+      "/like/{post_id}": 0.673352435530086,
+      "/profile/{user_id}": 0.17765042979942694,
+      "/post": 0.1489971346704871
+    },
+    "/like/{post_id}": {
+      "/profile/{user_id}": 0.688034188034188,
+      "/feed": 0.31196581196581197
+    },
+    "/profile/{user_id}": {
+      "/follow/{user_id}": 0.680365296803653,
+      "/feed": 0.319634703196347
+    },
+    "/follow/{user_id}": {
+      "/feed": 1.0
+    },
+    "/post": {
+      "/feed": 1.0
+    }
+  },
+  "endpoints": [
+    "/post",
+    "/feed",
+    "/like/{post_id}",
+    "/follow/{user_id}",
+    "/profile/{user_id}"
+  ],
+  "statistics": {
+    "num_users": 10,
+    "total_requests": 1012,
+    "total_transitions": 1002,
+    "num_endpoints": 5
+  }
+}
